@@ -1,0 +1,27 @@
+{% extends "main/base.html" %} 
+{% load static%}
+{% block title %}Quick Share{% endblock  %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+{% endblock  %}
+
+
+{% block body %}
+<div class="main_contaniner">
+  {% include "main/navbar.html" %}
+  <div class="image_contaniner">
+    {% comment %} <img class="svg_image" src="{% static 'assets/img/wave_background3.svg' %}" alt=""> {% endcomment %}
+    <div class="text_container">
+      <h2>The easiest file sharing solution</h2>
+      <p class="p1">No signup required</p>
+      <p class="p2">Upload.. Share.. Download..</p>
+      <button class='upload_now'>Upload Now</button>
+    </div>
+  
+  </div>
+  {% include "main/file_upload.html" %}
+
+
+</div>
+
+{% endblock %}
