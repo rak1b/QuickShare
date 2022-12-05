@@ -1,3 +1,50 @@
-<div class="section" id="#upload">
-  <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+<div class="section upload_section" id="upload">
+  <div class="upload_contents">
+    <p>Note : File will automatically delete after 12 hours</p>
+    <form action="/upload" class="dropzone" enctype="multipart/form-data" id="file_dropzone">{% csrf_token %}</form>
+    <button class="button1" id="submit_files">Upload</button>
+  </div>
+  <div></div>
 </div>
+
+<script>
+  Dropzone.autoDiscover = false;
+
+  var myDropzone = new Dropzone("#file_dropzone", {
+    autoProcessQueue: false,
+  });
+
+  $("#submit_files").on("click", function () {
+    console.log(myDropzone.getQueuedFiles());
+    console.log(myDropzone.getAcceptedFiles());
+    var files = myDropzone.getAcceptedFiles();
+    console.log("files", files[0].name);
+    var csrf = $("input[name=csrfmiddlewaretoken]").val();
+    let formData = new FormData();
+    formData.append("csrfmiddlewaretoken", csrf);
+    for (let i = 0; i < files.length; i++) {
+      formData.append(files[i].name, files[i]);
+    }
+
+    $.ajax({
+      url: "/upload/",
+      type: "POST",
+      data: formData,
+      async: false,
+      cache: false,
+      contentType: false,
+      enctype: "multipart/form-data",
+      processData: false,
+      success: function (data) {
+        $("#message").html("<p class='text-center text-success font-weight-bold'>Success</p>");
+      },
+      error: function (data) {
+        $("#message").html("<p class='text-center text-danger font-weight-bold'>Failed</p>");
+      },
+    });
+  });
+</script>
+{% comment %} var myDropzone = new Dropzone('#file_dropzone', { url: "/upload/", autoProcessQueue: false, }); $("#submit_files").click(function () {
+myDropzone.processQueue(); }); {% endcomment %} {% comment %} $.ajax({ url: "/upload/", type: "POST", dataType: "json", cache: false, contentType:
+false, processData: false, data: data, success: function (response) { // display success response console.log("successssssssssssss",response) },
+error: function (response) { console.log("NOPEEEEEE") console.log("response",response) } }); {% endcomment %}
