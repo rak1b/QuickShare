@@ -2,7 +2,7 @@ import os
 
 from .base import *
 
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = ['*', ]
 
 # Database

@@ -133,11 +133,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 40vw;
 }
 .upload_contents p {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
+  color: #c8c8c8;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .dropzone {
@@ -149,4 +150,44 @@
   margin: auto;
   background: #c4369a4d;
   border-radius: 19px;
+}
+.submit_button {
+  width: 100%;
+  margin-top: 34px;
+  border-radius: 12px;
+  border: 1px solid #e8e1e12b;
+}
+
+.dropzone .dz-message .dz-button {
+  font-size: 13px !important;
+}
+
+#download_url {
+  background: #c4369a4d;
+  border-radius: 19px;
+  border: none;
+  outline: none;
+  color: #63feb5;
+  height: 50px;
+  padding: 10px 20px;
+}
+.copy_btn {
+  border: none;
+  border-radius: 16px;
+  font-size: 10px;
+  padding: 14px;
+  color: white;
+  background: #ef2c2c;
+  border: none;
+  outline: none;
+}
+
+.copy_btn:hover {
+  background: #c4369a;
+  cursor: pointer;
+}
+
+.download_svg {
+  width: 150px;
+  margin-bottom: 25px;
 }

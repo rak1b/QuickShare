@@ -33,5 +33,5 @@ def upload_files(request):
             files_objs.append(files_obj)
 
         zip_files(folder.uid)
-        return JsonResponse({'uid': folder.uid})
-        # return JsonResponse({'url': f"{request.scheme }://{ request.META.get('HTTP_HOST')}/static/zip/{folder.uid}.zip"})
+        # return JsonResponse({'uid': folder.uid})
+        return JsonResponse({'download_url': f"{request.scheme }://{ request.META.get('HTTP_HOST')}/download/{folder.uid}"})
