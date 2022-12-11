@@ -1,0 +1,69 @@
+{% load static %} {% block css %} <link rel="stylesheet" href='{% static 'assets/css/feature.css' %}'> {% endblock css %}
+
+<section class="feature" id="features" aria-labelledby="carousel-heading">
+  <h2 class="features_heading">Our Features</h2>
+
+  <section class="splide features_div">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide splide_width">
+          <div class="card card_width">
+            <div class="card-body">
+              <img src="{% static 'assets/img/feature.svg' %}" class="card-img-top card_image_position" alt="..." />
+              <p class="card-text">No Sign Up Required</p>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide splide_width">
+          <div class="card card_width">
+            <div class="card-body">
+              <img src="{% static 'assets/img/feature.svg' %}" class="card-img-top card_image_position" alt="..." />
+
+              <p class="card-text">Free of Cost</p>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide splide_width">
+          <div class="card card_width">
+            <div class="card-body">
+              <img src="{% static 'assets/img/feature.svg' %}" class="card-img-top card_image_position" alt="..." />
+
+              <p class="card-text">Secure File</p>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide splide_width">
+          <div class="card card_width">
+            <div class="card-body">
+              <img src="{% static 'assets/img/feature.svg' %}" class="card-img-top card_image_position" alt="..." />
+
+              <p class="card-text">Make Password Protected</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+<script>
+  const splide = new Splide(".features_div", {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    perPage: 3,
+    autoPlay: true,
+    autoScroll: {
+      speed: -0.5,
+    },
+    breakpoints: {
+      640: {
+        perPage: 2,
+      },
+      540: {
+        perPage: 1,
+      },
+    },
+  });
+
+  splide.mount(window.splide.Extensions);
+</script>

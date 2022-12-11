@@ -106,8 +106,13 @@
 }
 
 .upload_section {
-  /* background-image: linear-gradient(to bottom, #482664, #4b2560, #4d245c, #4f2359, #512255, #602559, #6f285d, #7e2b5f, #a03365, #c03e67, #df4c65, #fb5f5f); */
-
+  /* background-image: linear-gradient( to right bottom, #522150, #512154, #502257, #4e235b, #4c245f, #5b2666, #6c276b, #7c2770, #a32671, #c7296b, #e6365f, #ff4d4d ); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #53378482;
+}
+.download_section {
   background-image: linear-gradient(
     to right bottom,
     #522150,
@@ -190,4 +195,58 @@
 .download_svg {
   width: 150px;
   margin-bottom: 25px;
+}
+
+.features_heading {
+  color: white !important;
+}
+
+.password_class {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #537dcd5c;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 8px;
+  color: honeydew;
+}
+.password_class ::placeholder {
+  color: white;
+}
+
+.password_helper_p {
+  color: white;
+  font-size: 12px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .text_container h2 {
+    font-size: 39px;
+  }
+
+  .text_container .p1 {
+    font-size: 20px;
+  }
+
+  .text_container .p2 {
+    font-size: 11px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .text_container h2 {
+    font-size: 39px;
+    margin: 25px 0;
+  }
+  .upload_contents {
+    width: 85vw;
+  }
+  .image_contaniner {
+    width: 100vw;
+    height: 43vh;
+  }
+
+  .feature {
+    height: 70vh;
+  }
 }

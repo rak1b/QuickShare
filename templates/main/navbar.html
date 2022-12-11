@@ -1,6 +1,6 @@
 {%load static%}
-<nav class="navbar navbar-expand-lg text-white bg-transparent">
-  <a class="navbar-brand " href="#"><img class="logo" src="{% static 'assets/img/logo2.png' %}" alt=""></a>
+<nav class="navbar navbar-dark navbar-expand-lg text-white bg-transparent">
+  <a class="navbar-brand " href="/"><img class="logo" src="{% static 'assets/img/logo2.png' %}" alt=""></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -14,9 +14,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav navbar_class " style="margin-left: auto;">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/#features">Features</a>
+      <a class="nav-item nav-link" href="/upload">Upload</a>
       {% comment %} <a class="nav-item nav-link disabled" href="#">Disabled</a> {% endcomment %}
     </div>
   </div>

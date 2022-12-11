@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,6 +37,10 @@
       referrerpolicy="no-referrer"
     ></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <link rel="stylesheet" href={% static 'assets/splide/css/splide.min.css' %}>
+    <script src="{% static 'assets/splide/js/splide.min.js' %}"></script>
+    <script src="{% static 'assets/splide/js/autoplay.js' %}"></script>
+
     {% block css %} {% endblock %}
   </head>
   <body>

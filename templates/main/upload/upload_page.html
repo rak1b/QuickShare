@@ -1,0 +1,17 @@
+{% extends "main/base.html" %} 
+{% load static%}
+{% block title %}Quick Share{% endblock  %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+{% endblock  %}
+
+
+{% block body %}
+<div class="main_contaniner">
+  {% include "main/navbar.html" %}
+  {% include "main/upload/file_upload.html" %}
+
+
+</div>
+
+{% endblock %}

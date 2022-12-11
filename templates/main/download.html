@@ -1,11 +1,19 @@
 {% extends "main/base.html" %} {% load static%} {% block title %}Download | Quick Share{% endblock %} {% block css %}
 <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
 {% endblock %} {% block body %}
-<div class="section upload_section" id="upload">
+<div class="section download_section" id="upload">
   <div class="upload_contents download_contents">
-    <img class='download_svg' src="{% static 'assets/img/download.svg' %}" alt="Download">
-    <p>Click The Button To Download Your Files</p>
-    <a class="button1" href={{url}}>Download</a>
+    <img class="download_svg" src="{% static 'assets/img/download.svg' %}" alt="Download" />
+    <p>{{message}}</p>
+    {% if input %}
+    <form method="POST" action="{{url}}">
+      {% csrf_token %}
+      <input placeholder="********" name="password" class="password_class mb-5 w-75 w-sm-100" type="text" value="" id="password" />
+      <input class="button1" type="submit" value="Submit" />
+    </form>
+    {% else %}
+    <a class="button1" href="{{url}}">Download</a>
+    {% endif %}
   </div>
 </div>
 
